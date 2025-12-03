@@ -18,25 +18,6 @@ Runestone Version 6
 
 **Important** December 2021 - merged Runestone 6 to master branch.  In runestone 6.0 we assume that you are using the new `bookserver` for serving books.  This is installed automatically as part of the Docker build in the main RunestoneServer.  But you can also `pip install bookserver` to run a small scale server that uses sqllite.  Eventually `bookserver` will replace the super simple server you get when you run `runestone serve`
 
-Documentation
--------------
-
-Writing **new** books using the Runestone RST markup language is deprecated as of Summer 2022.  It is strongly recommended that you use the `PreTeXt <https://pretextbook.org>`_ markup language for writing new books.
-
-* Take a look at the `Sample Book <https://pretextbook.org/examples/sample-book/annotated/sample-book.html>` Especially Chapter 3, the section titled Interactive Exercises.  The activecode, CodeLens and all the rest of the interactives that you see in that sample book are powered by the components in this repository.  This repository will remain the home of those interctive components.
-
-* Take a look at the `PreTeXt Guide <https://pretextbook.org/doc/guide/html/guide-toc.html>`_ It contains comprehensive documentation on writing in PreTeXt.
-
-* As an Author you will want to use the PreTeXt CLI for writing books.   Experienced Runestone authors will find the pretext cli to be quite familiar, but better organized with fewer mysterious configuration files. See `PreTeXt-CLI <https://pretextbook.org/doc/guide/html/guide-toc.html>`
-
-
-Quick Start
------------
-
-* `pip install pretext`
-* Create a folder for your book project then run
-* `pretext new` to create a new book.
-
 
 Old Documentation
 -----------------
@@ -77,13 +58,6 @@ Now from your browser you can open up ``http://localhost:8000/index.html``  You 
 
 
 If you edit ``_sources/index.html`` or ``_sources/overview.rst`` and then rebuild and serve again you will see your changes.  The best documentation is probably the overview.rst file itself, as it demonstrates how to use all of the common components and shows most of their options.
-
-
-**Windows Users** I have tested the installation, along with init, build, and serve on Windows 8.1.
-The biggest pain is probably setting your PATH environment variable so you can simply type the commands
-from the shell.  Please note that I am not a regular user of windows, I only test things on my VMWare
-installation every so often.  If you are new to using Python on windows I recommend you check out this
-link on `Using Python with Windows <https://docs.python.org/3.4/using/windows.html>`_
 
 
 Developing and Hacking
@@ -185,29 +159,3 @@ If you already have an existing `Sphinx <http://sphinx-doc.org>`_  project and y
 * Then modify your html_static_path:  ``html_static_path = ['_static']  + runestone_static_dirs()``  Again you may have your own set of static paths in the initial list.
 
 
-See https://github.com/bnmnetp/runestone/wiki/DevelopmentRoadmap to get a sense for how this is all going to come together.
-
-Researchers
------------
-
-If you use Runestone in your Research or write about it, please reference ``https://runestone.academy`` and cite this paper:
-
-::
-
-   @inproceedings{Miller:2012:BPE:2325296.2325335,
-    author = {Miller, Bradley N. and Ranum, David L.},
-    title = {Beyond PDF and ePub: Toward an Interactive Textbook},
-    booktitle = {Proceedings of the 17th ACM Annual Conference on Innovation and Technology in Computer Science Education},
-    series = {ITiCSE '12},
-    year = {2012},
-    isbn = {978-1-4503-1246-2},
-    location = {Haifa, Israel},
-    pages = {150--155},
-    numpages = {6},
-    url = {http://doi.acm.org/10.1145/2325296.2325335},
-    doi = {10.1145/2325296.2325335},
-    acmid = {2325335},
-    publisher = {ACM},
-    address = {New York, NY, USA},
-    keywords = {cs1, ebook, sphinx},
-   }
